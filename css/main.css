@@ -10,13 +10,129 @@
   padding-top: 40vh;
   overflow: hidden;
   text-align: center;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), to(rgba(2, 0, 36, 0.3))), url(../images/she.jpg) center right;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(2, 0, 36, 0.3)), url(../images/she.jpg) center right;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.9)), to(rgba(39, 39, 39, 0.3))), url(../images/she.jpg) center;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(39, 39, 39, 0.3)), url(../images/she.jpg) center;
   background-size: cover;
 }
 
-body {
+.home__name {
+  font-size: 5rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  border-bottom: 2px solid white;
+}
+
+.home__name--last {
+  color: #ff652f;
+  font-weight: 700;
+}
+
+.btn-menu {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 1rem;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-menu__burger {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 28px;
+  height: 3px;
+  background: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-menu__burger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 28px;
+  height: 3px;
+  background: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-menu__burger::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 3px;
+  background: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-menu__burger.open {
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
+  background: transparent;
+}
+
+.btn-menu__burger.open::before {
+  -webkit-transform: rotate(45deg) translate(5px, 8px);
+          transform: rotate(45deg) translate(5px, 8px);
+}
+
+.btn-menu__burger.open::after {
+  width: 28px;
+  -webkit-transform: rotate(-45deg) translate(3px, -7px);
+          transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 0.98;
+  visibility: hidden;
+}
+
+.nav.open {
+  visibility: visible;
+}
+
+.nav .nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
   background: d #272727;
+  list-style-type: none;
+  padding-right: 1rem;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav .nav-menu.open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+body {
+  background: body primary-color;
   color: white;
   height: 100vh;
   font-family: "segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -54,6 +170,8 @@ main .social-icons {
 
 main .social-icons a {
   padding: 0.4rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 main .social-icons a:hover {

@@ -1,8 +1,7 @@
-@import "config";
-@import "home";
+@import "config", "home", "menu";
 
 body {
-  background: $primary-color;
+  background: &primary-color;
   color: white;
   height: 100vh;
   font-family: "segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -34,6 +33,7 @@ main {
 
     a {
       padding: 0.4rem;
+      @include transition-ease;
       &:hover {
         color: $secondary-color;
       }
