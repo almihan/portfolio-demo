@@ -1,7 +1,7 @@
-@import "config", "home", "menu";
+@import "config", "home", "menu", "about";
 
 body {
-  background: &primary-color;
+  background: $primary-color;
   color: white;
   height: 100vh;
   font-family: "segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -15,6 +15,9 @@ h3 {
 a {
   color: white;
   text-decoration: none;
+}
+.text-secondary {
+  color: $secondary-color;
 }
 header {
   position: fixed;
