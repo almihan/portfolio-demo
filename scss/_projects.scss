@@ -1,0 +1,92 @@
+.projects {
+  padding-bottom: 2rem;
+  &__bio-img {
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.9),
+        rgba(39, 39, 39, 0.3)
+      ),
+      url(../images/she.jpg) center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .text-secondary {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__items {
+    width: 50vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1rf;
+    grid-gap: 2rem;
+  }
+  &__item {
+    position: relative;
+    border-bottom: 5px solid $secondary-color;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      max-height: 20rem;
+      height: 100%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $secondary-color;
+      opacity: 0;
+      @include transition-ease;
+    }
+
+    &:hover {
+      &::after {
+        top: 0;
+        opacity: 0.9;
+      }
+      .projects__btn {
+        opacity: 1;
+      }
+    }
+  }
+  &__btns {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+  }
+  &__btn {
+    opacity: 0;
+    column-rule: $secondary-color;
+    @include transition-ease;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+  }
+  footer {
+    transform: rotate(90deg) translate(-3rem, -5rem);
+  }
+}
