@@ -31,6 +31,8 @@
       height: 50vh;
     }
     &__items {
+      width: 70vw;
+      max-width: 70vw;
       grid-template-columns: repeat(2, 1fr);
     }
     .text-secondary {
